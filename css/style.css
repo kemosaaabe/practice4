@@ -6,6 +6,14 @@
   --blur: blur(10px);
 }
 
+* {
+  transition: all 0.25s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body.dark {
   --bg: #1a1a1a;
   --text: #eee;
@@ -30,6 +38,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .nav ul {
@@ -64,8 +73,17 @@ body {
 }
 
 .hero {
-  text-align: center;
+  position: relative;
   padding: 120px 20px;
+  text-align: center;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 40px;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .features-grid,
@@ -86,12 +104,42 @@ body {
   border-radius: 16px;
   backdrop-filter: blur(10px);
   text-align: center;
-  transition: transform 0.3s;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .feature-card:hover,
 .product-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.feature-card img {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 10px;
+}
+
+.feature-card h3 {
+  margin-bottom: 6px;
+  font-size: 20px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.product-card h3 {
+  margin-top: 5px;
+  font-size: 18px;
 }
 
 .subscribe {
@@ -113,26 +161,41 @@ body {
   border-radius: 6px;
 }
 
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
 .modal {
+  z-index: 1000;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(6px);
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 .modal.show {
-  display: flex;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .modal-content {
   background: var(--bg);
   padding: 30px;
-  border-radius: 12px;
-  max-width: 400px;
-  text-align: center;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show .modal-content {
+  opacity: 1;
 }
 
 .close-modal {
@@ -142,8 +205,19 @@ body {
   cursor: pointer;
 }
 
-@media (min-width: 768px) and (max-width: 1200px) {
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
 
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
   .nav {
     display: block;
   }
@@ -159,10 +233,6 @@ body {
 
   .mobile-menu {
     display: none !important;
-  }
-
-  .hero {
-    padding: 150px 40px;
   }
 
   .hero h1 {
@@ -186,9 +256,7 @@ body {
   }
 }
 
-
 @media (min-width: 1200px) {
-
   .header {
     padding: 25px 60px;
   }

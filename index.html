@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EcoFlow — Экологичные решения для дома</title>
-  <link rel="stylesheet" href="/css/style.css" />
-</head>
-<body>
-  <header class="header">
-    <div class="logo">EcoFlow</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoFlow — Экологичные решения для дома</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">EcoFlow</div>
 
-    <nav class="nav">
+      <nav class="nav">
+        <ul>
+          <li><a href="#features">Преимущества</a></li>
+          <li><a href="#products">Каталог</a></li>
+          <li><a href="#subscribe">Подписка</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" aria-label="Переключить тему"></button>
+
+      <button class="burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <nav class="mobile-menu">
       <ul>
         <li><a href="#features">Преимущества</a></li>
         <li><a href="#products">Каталог</a></li>
@@ -18,71 +33,104 @@
       </ul>
     </nav>
 
-    <button class="theme-toggle" aria-label="Переключить тему"></button>
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>EcoFlow</h1>
+          <p>Экологичные решения для современного дома</p>
+          <button class="btn" id="openModal">Подробнее</button>
+        </div>
 
-    <button class="burger" aria-label="Открыть меню">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
+        <img src="/" alt="Экологичный дом" class="hero-img" />
+      </section>
 
-  <nav class="mobile-menu">
-    <ul>
-      <li><a href="#features">Преимущества</a></li>
-      <li><a href="#products">Каталог</a></li>
-      <li><a href="#subscribe">Подписка</a></li>
-    </ul>
-  </nav>
+      <section id="features" class="features fade-in">
+        <h2>Почему EcoFlow?</h2>
+        <div class="features-grid">
+          <div class="reveal">
+            <article class="feature-card">
+              <img src="/" alt="Экология" />
+              <h3>Экологично</h3>
+              <p>Только безопасные и перерабатываемые материалы.</p>
+            </article>
+          </div>
 
-  <main>
-    <section class="hero">
-      <h1>EcoFlow</h1>
-      <p>Экологичные решения для современного дома</p>
-      <button class="btn" id="openModal">Подробнее</button>
-    </section>
+          <div class="reveal">
+            <article class="feature-card">
+              <img src="/" alt="Экономично" />
+              <h3>Экономично</h3>
+              <p>Помогаем снизить расходы и потребление ресурсов.</p>
+            </article>
+          </div>
 
-    <section id="features" class="features">
-      <h2>Почему EcoFlow?</h2>
-      <div class="features-grid">
-        <article class="feature-card">Экологично</article>
-        <article class="feature-card">Экономично</article>
-        <article class="feature-card">Стильно</article>
-        <article class="feature-card">Технологично</article>
+          <div class="reveal">
+            <article class="feature-card">
+              <img src="/" alt="Стильно" />
+              <h3>Стильно</h3>
+              <p>Современный дизайн, который впишется в любой интерьер.</p>
+            </article>
+          </div>
+
+          <div class="reveal">
+            <article class="feature-card">
+              <img src="/" alt="Технологично" />
+              <h3>Технологично</h3>
+              <p>Умные функции для комфортной жизни.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="products" class="products fade-in">
+        <h2>Популярные товары</h2>
+        <div class="product-grid">
+          <div class="reveal">
+            <article class="product-card">
+              <img src="/" alt="Бамбуковая бутылка" />
+              <h3>Бамбуковая бутылка</h3>
+            </article>
+          </div>
+
+          <div class="reveal">
+            <article class="product-card">
+              <img src="/" alt="Эко сумка" />
+              <h3>Многоразовая сумка</h3>
+            </article>
+          </div>
+
+          <div class="reveal">
+            <article class="product-card">
+              <img src="/" alt="Металлическая бутылка" />
+              <h3>Металлическая бутылка</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="subscribe" class="subscribe">
+        <h2>Подпишись на новости</h2>
+        <form class="subscribe-form">
+          <input type="email" placeholder="Ваш email" required />
+          <button class="btn">Отправить</button>
+        </form>
+      </section>
+    </main>
+
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="modal-content">
+        <button class="close-modal" aria-label="Закрыть окно">×</button>
+        <h2>О EcoFlow</h2>
+        <p>
+          EcoFlow предлагает экологичные товары и умные решения для современного
+          дома. Мы заботимся о будущем планеты.
+        </p>
       </div>
-    </section>
-
-    <section id="products" class="products">
-      <h2>Популярные товары</h2>
-      <div class="product-grid">
-        <article class="product-card">Товар 1</article>
-        <article class="product-card">Товар 2</article>
-        <article class="product-card">Товар 3</article>
-      </div>
-    </section>
-
-    <section id="subscribe" class="subscribe">
-      <h2>Подпишись на новости</h2>
-      <form class="subscribe-form">
-        <input type="email" placeholder="Ваш email" required />
-        <button class="btn">Отправить</button>
-      </form>
-    </section>
-  </main>
-
-  <div class="modal" role="dialog" aria-modal="true">
-    <div class="modal-content">
-      <button class="close-modal" aria-label="Закрыть окно">×</button>
-      <h2>О EcoFlow</h2>
-      <p>
-        EcoFlow предлагает экологичные товары и умные решения для
-        современного дома. Мы заботимся о будущем планеты.
-      </p>
     </div>
-  </div>
 
-  <footer class="footer">
-    <p>© EcoFlow, 2025</p>
-  </footer>
+    <footer class="footer">
+      <p>© EcoFlow, 2025</p>
+    </footer>
 
-  <script src="/js/script.js"></script>
-</body>
+    <script src="/js/script.js"></script>
+  </body>
 </html>
