@@ -195,9 +195,17 @@ body {
   text-align: center;
   background-image: url('../assets/images/hero.png');
   background-size: 100%;
+  background-repeat: no-repeat;
   margin-bottom: 80px;
-
   color: #222 !important;
+}
+
+.hero-content {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(6px);
+  padding: 20px 30px;
+  border-radius: 16px;
+  display: inline-block;
 }
 
 .content,
@@ -271,9 +279,34 @@ body {
   padding: 40px 20px;
 }
 
+.subscribe-form {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
 .subscribe-form input {
-  padding: 10px;
-  width: 200px;
+  width: 280px;
+  height: 48px;
+  padding: 0 16px;
+  font-size: 16px;
+  color: var(--text);
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.subscribe-form input:hover {
+  border-color: var(--accent);
+}
+
+.subscribe-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.25);
 }
 
 .btn {
