@@ -116,8 +116,13 @@ body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-.content {
+.content,
+.footer {
   padding: 0 20px;
+}
+
+.footer {
+  border-top: 1px solid rgb(220, 220, 220);
 }
 
 .features-grid,
@@ -296,7 +301,8 @@ body {
     padding: 25px 60px;
   }
 
-  .content {
+  .content,
+  .footer {
     padding: 0 60px;
   }
 

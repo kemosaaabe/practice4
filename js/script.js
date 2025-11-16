@@ -28,7 +28,6 @@ modal.addEventListener('click', (e) => {
 
 const revealElements = document.querySelectorAll('.reveal');
 
-// Если при загрузке элемент в зоне видимости — делаем его видимым без анимации
 function revealOnLoad() {
   revealElements.forEach((el) => {
     const rect = el.getBoundingClientRect();
@@ -40,15 +39,12 @@ function revealOnLoad() {
 
 window.addEventListener('load', revealOnLoad);
 
-// Observer для повторных анимаций
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // вход в область → плавное появление
         entry.target.classList.add('visible');
       } else {
-        // выход из видимости → скрываем, чтобы анимация могла повториться
         entry.target.classList.remove('visible');
       }
     });
